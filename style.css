@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+    height: 90vh;
+}
+
+header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid gray;
+    height: 130px;
+}
+.logo{
+    width: 250px;
+}
+.icon-usuario{
+    width: 70px;
+    padding: 5px; 
+    border-radius: 30%;
+    border:2px solid black ;  
+    background-color: white;
+    margin: 10px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+    color: gray;
+}
+section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post{
+    background-color: white;
+    width: 30%;
+    height: 300px;
+    border-radius: 20px;
+}
