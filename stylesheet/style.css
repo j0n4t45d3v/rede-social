@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+
 body{
     background-color: rgba(253, 190, 71, 0.89);
     height: 90vh;
@@ -86,8 +87,9 @@ body{
     box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.315);
     margin: 20px;
 }
+
 .post-icon{
-    width: 15%;
+    width: 10%;
     align-self: flex-end;
     margin-bottom: 10px;
 }
@@ -100,12 +102,21 @@ body{
     transition: .5s;
 }
 
-.img-post:hover{
-    transform: scale(2);
-    background: rgba(0, 0, 0, 0.822);
-    box-shadow: 1px 1px 200px 200px rgba(0, 0, 0, 0.363);
+.title{
+    align-self: center;
+    margin-top: 10px;
 }
 
-.title{
-    margin-top: 20px;
+.comment-icon{
+    width: 8%;
+}
+.comment{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    border: 2px solid gray;
+    border-radius: 100px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
 }
