@@ -6,7 +6,7 @@
 }
 
 body{
-    height: 89.6vh;
+    height: 100vh;
     background: linear-gradient(to bottom right,rgba(253, 172, 21, 0.801),rgba(253, 189, 70, 0.801), rgba(255, 255, 255, 0.767));
 }
 .header{
@@ -33,7 +33,7 @@ body{
     display: flex;
     justify-content: space-between;
     margin: 2px 8% 10px 36.65%;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #300879;
 }
