@@ -1,9 +1,37 @@
 const section = document.querySelector(".section");
 
+
+
 window.addEventListener("DOMContentLoaded", e => {
 
+    fetch('https://dummyjson.com/users')
+            .then(res => res.json())
+            .then(res => {
+                const usuarioPrincipal = document.querySelector(".icon-usuario");
+                const nomePrincipal = document.querySelector(".name-user");
+
+                usuarioPrincipal.src = res.users[0].image;
+                nomePrincipal.textContent = res.users[0].username;
+
+                
+            })
+
+    async function user(img){
+        let a = '';
+        await fetch('https://dummyjson.com/users')
+            .then(res => res.json())
+            .then(res => {
+                let random = Math.floor(Math.random() * res.users.length);
+                const user = res.users[random];
+
+                img.src= user.image;
+                
+            })
+        
+    }
+
     async function geraComentario(div1){
-        return await fetch('https://dummyjson.com/comments')
+         await fetch('https://dummyjson.com/comments')
                 .then( res => res.json())
                 .then( res => {
                     let random = Math.floor(Math.random() * res.comments.length); 
@@ -65,12 +93,16 @@ window.addEventListener("DOMContentLoaded", e => {
                 const h1 = document.createElement("h1");
                 const div = document.createElement("div");
         
-                img.src = "img/perfil.png";
+                user(img);
                 imgPost.src = "https://imagens.mdig.com.br/thbs/45184mn.jpg";
         
                 a.href = "usuario.html";
                 p.textContent = post.body;
                 h1.textContent = post.title;
+
+                let r = Math.random() * 255;
+                let g = Math.random() * 255;
+                let b = Math.random() * 255;
         
                 
         
@@ -85,6 +117,8 @@ window.addEventListener("DOMContentLoaded", e => {
                 `   
                 img.style = `
                     width: 100%;
+                    background-color: rgb(${r}, ${g}, ${b});
+                    border-radius: 100%;
                 `
                 h1.style = `
                     text-align: center;
