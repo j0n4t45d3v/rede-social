@@ -24,6 +24,16 @@ window.addEventListener("DOMContentLoaded", e => {
                 let random = Math.floor(Math.random() * res.users.length);
                 const user = res.users[random];
 
+                let r = Math.random() * 255;
+                let g = Math.random() * 255;
+                let b = Math.random() * 255;
+
+                img.style = `
+                    width: 100%;
+                    background-color: rgb(${r}, ${g}, ${b});
+                    border-radius: 100%;
+                `
+
                 img.src= user.image;
                 
             })
@@ -43,7 +53,7 @@ window.addEventListener("DOMContentLoaded", e => {
                     const a = document.createElement('a');
 
                     a.href = "usuario.html";
-                    img.src = "img/perfil.png";
+                    user(img);
                     p.textContent = comment.body;
 
                     a.appendChild(img);
@@ -99,12 +109,6 @@ window.addEventListener("DOMContentLoaded", e => {
                 a.href = "usuario.html";
                 p.textContent = post.body;
                 h1.textContent = post.title;
-
-                let r = Math.random() * 255;
-                let g = Math.random() * 255;
-                let b = Math.random() * 255;
-        
-                
         
                 imgPost.style = `
                     width: 100%;
@@ -115,11 +119,6 @@ window.addEventListener("DOMContentLoaded", e => {
                     width: 10%; 
                     align-self: flex-end;
                 `   
-                img.style = `
-                    width: 100%;
-                    background-color: rgb(${r}, ${g}, ${b});
-                    border-radius: 100%;
-                `
                 h1.style = `
                     text-align: center;
                     margin-top: 10px;
