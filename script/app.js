@@ -10,9 +10,15 @@ window.addEventListener("DOMContentLoaded", e => {
                 const usuarioPrincipal = document.querySelector(".icon-usuario");
                 const nomePrincipal = document.querySelector(".name-user");
 
-                usuarioPrincipal.src = res.users[0].image;
-                nomePrincipal.textContent = res.users[0].username;
+                const user = res.users[0];
 
+                usuarioPrincipal.src = user.image;
+                nomePrincipal.textContent = user.username;
+
+                usuarioPrincipal.addEventListener("click", e =>{
+                    sessionStorage.setItem("dados", user.image);
+                })
+                
                 
             })
 
@@ -140,7 +146,7 @@ window.addEventListener("DOMContentLoaded", e => {
                 div.appendChild(h1);
                 div.appendChild(p);
                 geraComentario(div)
-        
+                sessionStorage.setItem("dados", img.getAttribute('src'));
                 section.appendChild(div)
             })
     }
