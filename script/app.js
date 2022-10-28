@@ -90,7 +90,7 @@ window.addEventListener("DOMContentLoaded", e => {
                         color: black;
                     `
 
-                    div1.addEventListener('click', e => {
+                    a.addEventListener('click', e => {
                         sessionStorage.setItem('dados', img.getAttribute('src'));
                     })
 
@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", e => {
     'https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-601901056-768x517.jpg','https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-178390705-768x512.jpg',
     'https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-646190144-768x510.jpg','https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-628615976-768x512.jpg']
 
-    for(let i = 0; i < 15; i++){
+    for(let i = 0; i < 5; i++){
 
         fetch('https://dummyjson.com/posts')
             .then(res => res.json())
@@ -150,9 +150,12 @@ window.addEventListener("DOMContentLoaded", e => {
                     margin: 20px;
                 `
                 
-                img.addEventListener("click", e =>{
+                a.addEventListener("click", e =>{
                     sessionStorage.setItem('dados', img.getAttribute('src'));
                 })
+
+                
+
                 a.appendChild(img);
                 div.appendChild(a);
                 div.appendChild(imgPost);
