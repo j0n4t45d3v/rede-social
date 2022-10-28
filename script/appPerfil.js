@@ -1,8 +1,10 @@
+window.addEventListener("DOMContentLoaded", e =>{
+    e.preventDefault();
 
-
-fetch('https://dummyjson.com/users')
+    fetch('https://dummyjson.com/users')
     .then(res => res.json())
     .then(res => {
+        const nome = document.querySelector(".title");
         const a = sessionStorage.getItem("dados");
         let indice;
 
@@ -14,7 +16,7 @@ fetch('https://dummyjson.com/users')
         }
         
         const user = res.users[indice]
-
+        
         const img = document.querySelector(".icon-user");
         const idade = document.querySelector("#idade");
         const nascimento = document.querySelector("#nascimento");
@@ -24,6 +26,7 @@ fetch('https://dummyjson.com/users')
         const telefone = document.querySelector("#telefone");
         img.src = user.image;
 
+        nome.textContent = `${user.firstName} ${user.lastName}`;
         idade.textContent = user.age;
         nascimento.textContent = user.birthDate;
         altura.textContent = user.height;
@@ -31,3 +34,5 @@ fetch('https://dummyjson.com/users')
         email.textContent = user.email;
         telefone.textContent = user.phone;
     })
+
+})
