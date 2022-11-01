@@ -16,8 +16,8 @@ window.addEventListener("DOMContentLoaded", e => {
                 usuarioPrincipal.src = user.image;
                 nomePrincipal.textContent = user.username;
 
-                usuarioPrincipal.addEventListener("click", e =>{
-                    sessionStorage.setItem("dados", user.image);
+                usuarioPrincipal.addEventListener("click", ()=>{
+                    sessionStorage.setItem("dados", user.id);
                 })
                 
                 
