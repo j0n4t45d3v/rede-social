@@ -27,8 +27,8 @@ body{
 
 .icon-user{
     width: 25%;
-   background-color: white;
-   border-radius: 100%;
+    background-color: white;
+    border-radius: 100%;
 }
 .container-seg{
     display: flex;

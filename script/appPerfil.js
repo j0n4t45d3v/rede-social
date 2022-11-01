@@ -1,21 +1,11 @@
 window.addEventListener("DOMContentLoaded", e =>{
     e.preventDefault();
+    const id = sessionStorage.getItem("dados");
 
-    fetch('https://dummyjson.com/users')
+    fetch(`https://dummyjson.com/users/${id}`)
     .then(res => res.json())
     .then(res => {
         const nome = document.querySelector(".title");
-        const a = sessionStorage.getItem("dados");
-        let indice;
-
-        for(let i = 0 ; i < res.users.length; i++){
-            if(res.users[i].image == a){
-                indice = i;
-                break;
-            }
-        }
-        
-        const user = res.users[indice]
         
         const img = document.querySelector(".icon-user");
         const idade = document.querySelector("#idade");
@@ -24,15 +14,15 @@ window.addEventListener("DOMContentLoaded", e =>{
         const genero = document.querySelector("#genero");
         const email = document.querySelector("#email");
         const telefone = document.querySelector("#telefone");
-        img.src = user.image;
+        img.src = res.image;
 
-        nome.textContent = `${user.firstName} ${user.lastName}`;
-        idade.textContent = user.age;
-        nascimento.textContent = user.birthDate;
-        altura.textContent = user.height;
-        genero.textContent = user.gender;
-        email.textContent = user.email;
-        telefone.textContent = user.phone;
+        nome.textContent = `${res.firstName} ${res.lastName}`;
+        idade.textContent = res.age;
+        nascimento.textContent = res.birthDate;
+        altura.textContent = res.height;
+        genero.textContent = res.gender;
+        email.textContent = res.email;
+        telefone.textContent = res.phone;
     })
 
 })

@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", e => {
             })
 
     async function user(img){
-        let a = '';
+        
         await fetch('https://dummyjson.com/users')
             .then(res => res.json())
             .then(res => {
@@ -40,6 +40,10 @@ window.addEventListener("DOMContentLoaded", e => {
                     background-color: rgb(${r}, ${g}, ${b});
                     border-radius: 100%;
                 `
+
+                img.addEventListener('click', ()=>{
+                    sessionStorage.setItem('dados', user.id)
+                })
 
                 img.src= user.image;
                 
@@ -89,10 +93,6 @@ window.addEventListener("DOMContentLoaded", e => {
                         text-decoration: none;
                         color: black;
                     `
-
-                    a.addEventListener('click', e => {
-                        sessionStorage.setItem('dados', img.getAttribute('src'));
-                    })
 
                     div1.appendChild(div)
                 })
@@ -150,9 +150,9 @@ window.addEventListener("DOMContentLoaded", e => {
                     margin: 20px;
                 `
                 
-                a.addEventListener("click", e =>{
+               /*  a.addEventListener("click", e =>{
                     sessionStorage.setItem('dados', img.getAttribute('src'));
-                })
+                }) */
 
                 
 
@@ -162,7 +162,7 @@ window.addEventListener("DOMContentLoaded", e => {
                 div.appendChild(h1);
                 div.appendChild(p);
                 geraComentario(div)
-                sessionStorage.setItem("dados", img.getAttribute('src'));
+               
                 section.appendChild(div)
             })
     }
