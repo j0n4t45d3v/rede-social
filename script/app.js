@@ -150,12 +150,6 @@ window.addEventListener("DOMContentLoaded", e => {
                     margin: 20px;
                 `
                 
-               /*  a.addEventListener("click", e =>{
-                    sessionStorage.setItem('dados', img.getAttribute('src'));
-                }) */
-
-                
-
                 a.appendChild(img);
                 div.appendChild(a);
                 div.appendChild(imgPost);
