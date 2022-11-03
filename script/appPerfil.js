@@ -1,5 +1,5 @@
-window.addEventListener("DOMContentLoaded", e =>{
-    e.preventDefault();
+window.addEventListener("DOMContentLoaded", () =>{
+    
     const id = sessionStorage.getItem("dados");
 
     fetch(`https://dummyjson.com/users/${id}`)
