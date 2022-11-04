@@ -105,7 +105,6 @@ window.addEventListener("DOMContentLoaded", e => {
             .then(res => {
                 let random = Math.floor(Math.random() * res.posts.length); 
                 const post = res.posts[random];
-                let randomImgs = Math.floor(Math.random() * imgs.length)
                 
                 const a = document.createElement("a");
                 const img = document.createElement("img");
