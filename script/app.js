@@ -97,12 +97,7 @@ window.addEventListener("DOMContentLoaded", e => {
                     div1.appendChild(div)
                 })
     }
-
-    const imgs = ['https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-486755202-768x512.jpg', 'https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-687112264-768x479.jpg',
-    'https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-869138876-768x513.jpg', 'https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-694634868-768x512.jpg', 
-    'https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-601901056-768x517.jpg','https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-178390705-768x512.jpg',
-    'https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-646190144-768x510.jpg','https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-628615976-768x512.jpg']
-
+      
     for(let i = 0; i < 5; i++){
 
         fetch('https://dummyjson.com/posts')
@@ -120,7 +115,14 @@ window.addEventListener("DOMContentLoaded", e => {
                 const div = document.createElement("div");
         
                 user(img);
-                imgPost.src = imgs[randomImgs];
+                // imgPost.src = imgs[randomImgs];
+
+                fetch("https://dog.ceo/api/breeds/image/random")
+                    .then(res => res.json())
+                    .then(res =>{
+                        imgPost.src = res.message;
+                    })
+
         
                 a.href = "usuario.html";
                 p.textContent = post.body;
@@ -159,6 +161,7 @@ window.addEventListener("DOMContentLoaded", e => {
                
                 section.appendChild(div)
             })
+            .catch(err => console.log('ERROR: ',err))
     }
 })
 
